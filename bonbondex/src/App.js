@@ -6,15 +6,26 @@ import NavbarFeatures from './components/NavbarFeatures';
 import './App.css';
 
 class App extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      listeBonbons: []
+    }
+  }
 
-  render() {
+  componentDidMount(){
     const donneesBonbons = require('./data/liste_bonbons.json');
     const listeBonbons = donneesBonbons.products
-    console.log(listeBonbons)
+    this.setState({
+      listeBonbons: listeBonbons
+    })
+  }
+
+  render() {
     return (
       <Fragment>
         <NavbarFeatures />
-        <Home />
+        <Home listeBonbons={this.state.listeBonbons} />
       </Fragment>
 
     );
