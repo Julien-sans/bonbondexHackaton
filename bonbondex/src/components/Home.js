@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
-import { Container, Row, Col, Button, Card, CardBody, CardImage, CardTitle, CardText } from 'mdbreact';
+import { Container, Row, Col, Card, CardBody, CardImage, CardTitle } from 'mdbreact';
+import  '../data/liste_bonbons';
 
 
 class Home extends Component {
