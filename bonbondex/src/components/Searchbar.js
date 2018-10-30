@@ -5,7 +5,7 @@ class Searchbar extends React.Component {
     return (
       <div className="container">
         <div className="mt-5"></div>
-        <form
+        <div
           id="searchbar"
           className="form-inline active-cyan-3 active-cyan-4 mb-4 col-8 mx-auto"
         >
@@ -21,7 +21,7 @@ class Searchbar extends React.Component {
             onChange={this.props.updateSearch}
             aria-label="Search"
           />
-        </form>
+        </div>
       </div>
     );
   }
