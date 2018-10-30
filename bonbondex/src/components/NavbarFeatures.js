@@ -1,6 +1,6 @@
-import React from 'react';
-import { Navbar, NavbarBrand, NavbarNav, NavbarToggler, Collapse, NavItem, NavLink } from 'mdbreact';
-import { BrowserRouter as Router } from 'react-router-dom';
+import React, {Fragment} from 'react';
+import { Navbar, NavbarBrand, NavbarNav, NavbarToggler, Collapse, NavItem } from 'mdbreact';
+import { BrowserRouter as Router, NavLink } from 'react-router-dom';
 
 class NavbarFeatures extends React.Component {
   constructor(props) {
@@ -17,25 +17,24 @@ class NavbarFeatures extends React.Component {
       collapse: !this.state.collapse,
     });
   }
+  
   render() {
     return (
-      <Router>
+      <Fragment>
         <Navbar color="indigo" dark expand="md" scrolling>
-          <NavbarBrand href="/">
+          <NavLink exact to='/Home'>
             <strong>CandyDex</strong>
-          </NavbarBrand>
+          </NavLink>
           {!this.state.isWideEnough && <NavbarToggler onClick={this.onClick} />}
           <Collapse isOpen={this.state.collapse} navbar>
             <NavbarNav left>
-              <NavItem active>
-                <NavLink to="#">Mes Bonbons</NavLink>
-              </NavItem>
+                <NavLink className="nav-item" exact to="/mes-bonbons">Mes Bonbons</NavLink>
             </NavbarNav>
           </Collapse>
         </Navbar>
-      </Router>
+      </Fragment>
     );
   }
 }
 
-export default NavbarFeatures; 
+export default NavbarFeatures;
