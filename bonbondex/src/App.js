@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import { Button } from 'mdbreact';
 
 class App extends Component {
+
   render() {
+    const donneesBonbons = require('./liste_bonbons.json');
+    const listeBonbons = donneesBonbons.products
+    console.log(listeBonbons)
     return (
       <div className="App">
-<Button color="secondary">Secondary</Button>
+
       </div>
     );
   }
