@@ -34,7 +34,7 @@ class App extends Component {
   render() {
     const filteredList = this.state.listeBonbons.filter(
       candy =>
-        this.state.search === '' || candy.product_name.toLowerCase().includes(this.state.search.toLowerCase())
+        this.state.search === '' || candy.product_name.normalize('NFD').replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(this.state.search.toLowerCase())
     )
     return (
       <BrowserRouter>
