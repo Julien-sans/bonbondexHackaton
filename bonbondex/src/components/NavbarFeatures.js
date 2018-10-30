@@ -17,7 +17,7 @@ class NavbarFeatures extends React.Component {
       collapse: !this.state.collapse,
     });
   }
-  
+
   render() {
     return (
       <Fragment>

@@ -5,19 +5,31 @@ import NavbarFeatures from './components/NavbarFeatures';
 import MesBonbons from './components/MesBonbons.js';
 import { Route, BrowserRouter, Switch } from 'react-router-dom';
 import './App.css';
+import './searchbar.css';
 
 class App extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      listeBonbons: []
+    }
+  }
 
-  render() {
+  componentDidMount(){
     const donneesBonbons = require('./data/liste_bonbons.json');
     const listeBonbons = donneesBonbons.products
-    console.log(listeBonbons)
+    this.setState({
+      listeBonbons: listeBonbons
+    })
+  }
+
+  render() {
     return (
         <BrowserRouter>
           <Fragment>
             <NavbarFeatures/>
             <Switch>
-              <Route exact path="(/|/home)" component={Home} />
+              <Route exact path="(/|/home)" render={() => <Home listeBonbons={this.state.listeBonbons}/>}/>
               <Route exact path="/mes-bonbons" component={MesBonbons} />
             </Switch>
           </Fragment>
