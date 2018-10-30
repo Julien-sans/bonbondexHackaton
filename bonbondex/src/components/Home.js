@@ -17,7 +17,7 @@ class Home extends Component {
         });
       }
     render() {
-  
+
         return (
             <Fragment>
                 <Container >
@@ -44,7 +44,7 @@ class Home extends Component {
                                             </ModalFooter>
                                         </Modal>
                                     </Col>
-                                   
+
                                 )
                             })
                         }

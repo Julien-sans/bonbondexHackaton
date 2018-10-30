@@ -2,8 +2,8 @@ import React, { Component, Fragment } from 'react';
 import './App.css';
 import Home from './components/Home';
 import NavbarFeatures from './components/NavbarFeatures';
-import Searchbar from './components/Searchbar';
-
+import MesBonbons from './components/MesBonbons.js';
+import { Route, BrowserRouter, Switch } from 'react-router-dom';
 import './App.css';
 import './searchbar.css';
 
@@ -25,11 +25,15 @@ class App extends Component {
 
   render() {
     return (
-      <Fragment>
-        <NavbarFeatures />
-        <Searchbar />
-        <Home listeBonbons={this.state.listeBonbons} />
-      </Fragment>
+        <BrowserRouter>
+          <Fragment>
+            <NavbarFeatures/>
+            <Switch>
+              <Route exact path="(/|/home)" render={() => <Home listeBonbons={this.state.listeBonbons}/>}/>
+              <Route exact path="/mes-bonbons" component={MesBonbons} />
+            </Switch>
+          </Fragment>
+        </BrowserRouter>
     );
   }
 }
