@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
-import { Navbar, NavbarBrand, NavbarNav, NavbarToggler, Collapse, NavItem } from 'mdbreact';
-import { BrowserRouter as Router, NavLink } from 'react-router-dom';
+import { Navbar, NavbarNav, NavbarToggler, Collapse } from 'mdbreact';
+import { NavLink } from 'react-router-dom';
 
 class NavbarFeatures extends React.Component {
   constructor(props) {
