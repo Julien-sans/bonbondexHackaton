@@ -1,19 +1,28 @@
 .card-body{
     background-color: #ffbb33;
-    height: 150px;
+    //  height: 80px;
 
     .card-title{
         font-family: "Creepster";
-        font-size: 2em;
-        height: 50px;
-
+        font-size: 1.5em;
     }
-
-    
 }
 
 .card-footer{
     background-color: #ffbb33!important;
     border-top: 0!important;
 
+}
+
+.modal-content{
+    background-color: #2E2E2E!important;
+    color: white;
+
+    .modal-header{
+        border: 0!important;
+
+        .close{
+            color: white;
+        }
+    }
 }

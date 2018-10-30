@@ -37,8 +37,8 @@ class BonbonCard extends Component {
               </div>
           </CardFooter>
         </Card>
-        <Modal isOpen={this.state.isOpen} size="lg" lg position="top">
-          <ModalHeader toggle={this.toggle}>{product_name}</ModalHeader>
+        <Modal className="d-flex justify-content-center" isOpen={this.state.isOpen} size="lg" lg position="top">
+          <ModalHeader toggle={this.toggle} >{product_name}</ModalHeader>
             <ModalBody className="text-center">
                 <img className="w-100" src={image_front_small_url} /> 
                 <p className="mt-3">Liste des alergènes: {allergènes} </p>
