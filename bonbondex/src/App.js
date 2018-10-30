@@ -13,8 +13,15 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      listeBonbons: []
+      listeBonbons: [],
+      search: ''
     }
+    this.updateSearch = this.updateSearch.bind(this);
+  }
+
+  updateSearch(event) {
+    this.setState({ search: event.target.value.substr(0, 30) })
+    console.log(event.target.value)
   }
 
   componentDidMount() {
@@ -26,13 +33,19 @@ class App extends Component {
   }
 
   render() {
+    const filteredList = this.state.listeBonbons.filter(
+      candy =>
+        this.state.search === '' || candy.product_name.toLowerCase().includes(this.state.search.toLowerCase())
+    )
     return (
       <BrowserRouter>
         <Fragment>
           <NavbarFeatures />
-          <Searchbar />
+          <Searchbar
+            value={this.state.search}
+            updateSearch={this.updateSearch} />
           <Switch>
-            <Route exact path="(/|/home)" render={() => <Home listeBonbons={this.state.listeBonbons} />} />
+            <Route exact path="(/|/home)" render={() => <Home listeBonbons={filteredList} />} />
             <Route exact path="/mes-bonbons" component={MesBonbons} />
           </Switch>
         </Fragment>

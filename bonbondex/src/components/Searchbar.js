@@ -1,22 +1,6 @@
 import React from 'react';
-import liste_bonbons from '../data/liste_bonbons.json';
 
 class Searchbar extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      search: ''
-    }
-
-    this.updateSearch = this.updateSearch.bind(this);
-
-  };
-
-  updateSearch(event) {
-    this.setState({ search: event.target.value.substr(0, 20) })
-    console.log(event.target.value)
-  }
-
   render() {
     return (
       <div className="container">
@@ -33,8 +17,8 @@ class Searchbar extends React.Component {
           <input
             className="form-control form-control-sm ml-3 w-75 mx-auto"
             type="text"
-            value={this.state.search}
-            onChange={this.updateSearch}
+            value={this.props.value}
+            onChange={this.props.updateSearch}
             aria-label="Search"
           />
         </form>
