@@ -1,16 +1,42 @@
 import React from 'react';
 
 class Searchbar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      search: ''
+    }
+
+    this.updateSearch = this.updateSearch.bind(this);
+
+  };
+
+  updateSearch(event) {
+    this.setState({ search: event.target.value.substr(0, 20) })
+  }
+
   render() {
     return (
       <div className="container">
-        <div class="mt-5"></div>
-        <form id="searchbar" className="form-inline active-cyan-3 active-cyan-4 mb-4 col-8 mx-auto">
-          <i className="fa fa-search" aria-hidden="true"></i>
-          <input className="form-control form-control-sm ml-3 w-75 mx-auto" type="text" placeholder="Search" aria-label="Search" />
+        <div className="mt-5"></div>
+        <form
+          id="searchbar"
+          className="form-inline active-cyan-3 active-cyan-4 mb-4 col-8 mx-auto"
+        >
+          <i
+            className="fa fa-search"
+            aria-hidden="true"
+          >
+          </i>
+          <input
+            className="form-control form-control-sm ml-3 w-75 mx-auto"
+            type="text"
+            value={this.state.search}
+            onChange={this.updateSearch}
+            aria-label="Search"
+          />
         </form>
       </div>
-
     );
   }
 }
