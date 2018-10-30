@@ -2,8 +2,10 @@ import React, { Component, Fragment } from 'react';
 import './App.css';
 import Home from './components/Home';
 import NavbarFeatures from './components/NavbarFeatures';
+import Searchbar from './components/Searchbar';
 
 import './App.css';
+import './searchbar.css';
 
 class App extends Component {
   constructor(props){
@@ -25,9 +27,9 @@ class App extends Component {
     return (
       <Fragment>
         <NavbarFeatures />
+        <Searchbar />
         <Home listeBonbons={this.state.listeBonbons} />
       </Fragment>
-
     );
   }
 }

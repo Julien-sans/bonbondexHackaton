@@ -20,7 +20,7 @@ class NavbarFeatures extends React.Component {
   render() {
     return (
       <Router>
-        <Navbar color="indigo" dark expand="md" scrolling>
+        <Navbar color="cyan" dark expand="md" scrolling>
           <NavbarBrand href="/">
             <strong>CandyDex</strong>
           </NavbarBrand>
