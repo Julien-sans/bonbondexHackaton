@@ -2,66 +2,58 @@ import React, { Component, Fragment } from 'react';
 import { Container, Row, Col, Button, Card, CardBody, CardImage, CardTitle, CardFooter, Modal, ModalBody, ModalHeader, Fa } from 'mdbreact';
 import  '../data/liste_bonbons';
 import '../style/Home.scss';
+import BonbonCard from './BonbonCard';
 
 
 class Home extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            modal4601798030055: false,
-        }
+  constructor(props){
+    super(props);
+    this.state = {
+      modal4601798030055: false,
+      list: [],
+      newItem: ''
     }
+    this.handleClick = this.handleClick.bind(this)
+  }
 
-    toggle(nr) {
-        let modalNumber = 'modal' + nr
-        this.setState({
-            [modalNumber]: !this.state[modalNumber]
-        });
-    }
+  componentDidMount() {
+    localStorage.getItem('list') &&
+    this.setState({
+      list: JSON.parse(localStorage.getItem('list')),
+    })
+  }
 
-    render() {
-        const { list, newCandy } = this.state;
-        return (
-            <Fragment>
-                <Container id="home-page">
-                    <Row >
-                        {
-                            this.props.listeBonbons.filter(bonbon => bonbon.image_front_small_url!=='').map((bonbon, key) => {
-                                const { product_name, image_front_small_url, id, allergens } = bonbon;
-                                let modalNumber = 'modal' + id
-                                const allergènes = allergens ? allergens : "Il n'y a pas d'allergènes pour ce produit"
+  addItem = event => {
+    event.preventDefault();
+  }
 
-                                return(
-                                    <Col key={key} lg="4" md="6" xs="6" >
-                                        <Card className="card mt-3"  style={{height: "300px"}}>
-                                            <CardImage className="img-fluid w-100" src={image_front_small_url}  />
-                                            <CardBody className="p-2 "  >
-                                                <CardTitle onClick={() => this.toggle(id)} className="d-flex justify-content-center" style={{fontSize: "1em"}}>{product_name}</CardTitle>
-                                            </CardBody>
-                                            <CardFooter >
-                                                <div className="d-flex justify-content-center">
-                                                    <Button  size="md" color="warning" rounded><Fa icon="list" /></Button>
-                                                </div>
-                                            </CardFooter>
-                                        </Card>
-                                        <Modal isOpen={this.state[modalNumber]} size="lg" lg position="top">
-                                            <ModalHeader toggle={() => this.toggle(id)}>{product_name}</ModalHeader>
-                                            <ModalBody className="text-center">
-                                                <img className="w-100" src={image_front_small_url} /> 
-                                                <div className="mt-3">Liste des alergènes: {allergènes} </div>
-                                            </ModalBody>
-                                        </Modal>
+  handleClick = bonbon => {
+    const { list } = this.state;
+    const newList = [...list, bonbon]
+    localStorage.setItem('list', JSON.stringify(newList));
+    this.setState({
+      list: newList
+    })
+  }
 
-                                    </Col>
-
-                                )
-                            })
-                        }
-                    </Row>
-                </Container>
-            </Fragment>
-        );
-    }
+  render() {
+    return (
+      <Fragment>
+        <Container >
+          <Row >
+            {
+              this.props.listeBonbons.map((bonbon, key) =>
+              {
+                const bonbonInList = this.state.list.find((bonbonFound) => bonbon.id === bonbonFound.id)
+                const bonbonFound = bonbonInList !== undefined
+                return <BonbonCard bonbonFound={bonbonFound} key={key} handleClick={this.handleClick} bonbon={bonbon}/>
+              } )
+            }
+          </Row>
+        </Container>
+      </Fragment>
+    );
+  }
 }
 
 export default Home;
