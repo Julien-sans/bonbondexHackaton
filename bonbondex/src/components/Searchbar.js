@@ -1,4 +1,5 @@
 import React from 'react';
+import liste_bonbons from '../data/liste_bonbons.json';
 
 class Searchbar extends React.Component {
   constructor(props) {
