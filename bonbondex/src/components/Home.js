@@ -26,7 +26,7 @@ class Home extends Component {
                 <Container >
                     <Row >
                         {
-                            this.props.listeBonbons.map((bonbon, key) => {
+                            this.props.listeBonbons.filter(bonbon => bonbon.image_front_small_url!='').map((bonbon, key) => {
                                 const { product_name, image_front_small_url, id, allergens } = bonbon;
                                 let modalNumber = 'modal' + id
                                 return(
@@ -35,6 +35,10 @@ class Home extends Component {
                                             <CardImage className="img-fluid w-100" src={image_front_small_url}  />
                                             <CardBody className="p-2" style={{fontSize: "1.2em"}}>
                                                 <CardTitle >{product_name}</CardTitle>
+                                                <Button color="success" rounded>Miam</Button>
+                                                <Button color="danger" rounded>Beurk !</Button>
+
+
                                             </CardBody>
                                         </Card>
                                         <Modal isOpen={this.state[modalNumber]} size="lg" lg position="top">
@@ -43,7 +47,7 @@ class Home extends Component {
                                                 <Container>
                                                     <Row>
                                                         <Col xs="12">
-                                                            <img className="img-fluid" src={image_front_small_url} /> 
+                                                            <img className="img-fluid" src={image_front_small_url} />
                                                         </Col>
                                                         <Col xs="12" >
                                                             <h2>{product_name}</h2>
@@ -53,7 +57,7 @@ class Home extends Component {
                                                 </Container>
                                             </ModalBody>
                                         </Modal>
-                                        
+
                                     </Col>
 
                                 )
