@@ -13,6 +13,7 @@ class Searchbar extends React.Component {
 
   updateSearch(event) {
     this.setState({ search: event.target.value.substr(0, 20) })
+    console.log(event.target.value)
   }
 
   render() {
