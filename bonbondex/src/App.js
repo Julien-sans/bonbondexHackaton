@@ -6,7 +6,11 @@ import NavbarFeatures from './components/NavbarFeatures';
 import './App.css';
 
 class App extends Component {
+
   render() {
+    const donneesBonbons = require('./liste_bonbons.json');
+    const listeBonbons = donneesBonbons.products
+    console.log(listeBonbons)
     return (
       <Fragment>
         <NavbarFeatures />
