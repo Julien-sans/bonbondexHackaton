@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import NavbarFeatures from './components/NavbarFeatures';
 import './App.css';
 
 class App extends Component {
@@ -9,7 +10,7 @@ class App extends Component {
     console.log(listeBonbons)
     return (
       <div className="App">
-
+        <NavbarFeatures />
       </div>
     );
   }
