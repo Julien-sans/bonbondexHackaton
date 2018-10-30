@@ -1,6 +1,20 @@
 import React from 'react';
 
 class Searchbar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      search: ''
+    }
+    this.updateSearch = this.updateSearch.bind(this);
+  }
+
+  updateSearch(event) {
+    const search = event.target.value.substr(0, 30)
+    this.setState({ search: search })
+    this.props.updateSearch(search)
+  }
+
   render() {
     return (
       <div className="container">
@@ -17,8 +31,8 @@ class Searchbar extends React.Component {
           <input
             className="form-control form-control-sm ml-3 w-75 mx-auto"
             type="text"
-            value={this.props.value}
-            onChange={this.props.updateSearch}
+            value={this.state.search}
+            onChange={this.updateSearch}
             aria-label="Search"
           />
         </div>

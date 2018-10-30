@@ -19,9 +19,8 @@ class App extends Component {
     this.updateSearch = this.updateSearch.bind(this);
   }
 
-  updateSearch(event) {
-    this.setState({ search: event.target.value.substr(0, 30) })
-    console.log(event.target.value)
+  updateSearch(search) {
+    this.setState({ search: search })
   }
 
   componentDidMount() {
@@ -42,7 +41,6 @@ class App extends Component {
         <Fragment>
           <NavbarFeatures />
           <Searchbar
-            value={this.state.search}
             updateSearch={this.updateSearch} />
           <Switch>
             <Route exact path="(/|/home)" render={() => <Home listeBonbons={filteredList} />} />
