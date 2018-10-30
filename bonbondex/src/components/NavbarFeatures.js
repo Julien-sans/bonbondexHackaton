@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, NavbarBrand, NavbarNav, NavbarToggler, Collapse, NavItem, NavLink, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'mdbreact';
+import { Navbar, NavbarBrand, NavbarNav, NavbarToggler, Collapse, NavItem, NavLink } from 'mdbreact';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 class NavbarFeatures extends React.Component {
@@ -20,7 +20,7 @@ class NavbarFeatures extends React.Component {
   render() {
     return (
       <Router>
-        <Navbar color="indigo" dark expand="md" scrolling>
+        <Navbar color="cyan" dark expand="md" scrolling>
           <NavbarBrand href="/">
             <strong>CandyDex</strong>
           </NavbarBrand>
