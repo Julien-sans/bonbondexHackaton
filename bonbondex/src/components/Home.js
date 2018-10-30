@@ -8,7 +8,7 @@ class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            modal4601798030055: false
+            modal4601798030055: false,
         }
     }
 
@@ -20,7 +20,7 @@ class Home extends Component {
     }
 
     render() {
-
+        const { list, newCandy } = this.state;
         return (
             <Fragment>
                 <Container id="home-page">
@@ -40,7 +40,7 @@ class Home extends Component {
                                             </CardBody>
                                             <CardFooter >
                                                 <div className="d-flex justify-content-center">
-                                                    <Button size="md" color="warning" rounded><Fa icon="list" /></Button>
+                                                    <Button  size="md" color="warning" rounded><Fa icon="list" /></Button>
                                                 </div>
                                             </CardFooter>
                                         </Card>
