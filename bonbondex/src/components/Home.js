@@ -20,7 +20,7 @@ class Home extends Component {
     }
 
     render() {
-  
+
         return (
             <Fragment>
                 <Container >
@@ -55,7 +55,7 @@ class Home extends Component {
                                         </Modal>
                                         
                                     </Col>
-                                   
+
                                 )
                             })
                         }
