@@ -29,6 +29,8 @@ class Home extends Component {
                             this.props.listeBonbons.map((bonbon, key) => {
                                 const { product_name, image_front_small_url, id, allergens } = bonbon;
                                 let modalNumber = 'modal' + id
+                                const allergènes = allergens ? allergens : "Il n'y a pas d'allergènes pour ce produit"
+
                                 return(
                                     <Col key={key} lg="4" md="6" xs="12">
                                         <Card className="mt-3" onClick={() => this.toggle(id)} style={{height: "300px", cursor: "pointer"}}>
@@ -38,19 +40,10 @@ class Home extends Component {
                                             </CardBody>
                                         </Card>
                                         <Modal isOpen={this.state[modalNumber]} size="lg" lg position="top">
-                                            <ModalHeader toggle={() => this.toggle(id)}></ModalHeader>
-                                            <ModalBody>
-                                                <Container>
-                                                    <Row>
-                                                        <Col xs="12">
-                                                            <img className="img-fluid" src={image_front_small_url} /> 
-                                                        </Col>
-                                                        <Col xs="12" >
-                                                            <h2>{product_name}</h2>
-                                                            <p>Liste des alergènes: {allergens}</p>
-                                                        </Col>
-                                                    </Row>
-                                                </Container>
+                                            <ModalHeader toggle={() => this.toggle(id)}>{product_name}</ModalHeader>
+                                            <ModalBody className="text-center">
+                                                <img className="w-100" src={image_front_small_url} /> 
+                                                <div className="mt-3">Liste des alergènes: {allergènes} </div>
                                             </ModalBody>
                                         </Modal>
                                         
