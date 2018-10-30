@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react';
+import React, { Fragment } from 'react';
 import { Navbar, NavbarBrand, NavbarNav, NavbarToggler, Collapse, NavItem } from 'mdbreact';
 import { BrowserRouter as Router, NavLink } from 'react-router-dom';
 
@@ -28,7 +28,7 @@ class NavbarFeatures extends React.Component {
           {!this.state.isWideEnough && <NavbarToggler onClick={this.onClick} />}
           <Collapse isOpen={this.state.collapse} navbar>
             <NavbarNav left>
-                <NavLink className="nav-item text-white" exact to="/mes-bonbons">Mes Bonbons</NavLink>
+              <NavLink className="nav-item" exact to="/mes-bonbons">Mes Bonbons</NavLink>
             </NavbarNav>
           </Collapse>
         </Navbar>

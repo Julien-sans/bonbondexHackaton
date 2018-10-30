@@ -1,21 +1,29 @@
 import React, { Component, Fragment } from 'react';
-import './App.css';
+import { Route, BrowserRouter, Switch } from 'react-router-dom';
+
 import Home from './components/Home';
 import NavbarFeatures from './components/NavbarFeatures';
 import MesBonbons from './components/MesBonbons.js';
-import { Route, BrowserRouter, Switch } from 'react-router-dom';
-import './App.css';
+import Searchbar from './components/Searchbar';
+
 import './searchbar.css';
+import './App.css';
 
 class App extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-      listeBonbons: []
+      listeBonbons: [],
+      search: ''
     }
+    this.updateSearch = this.updateSearch.bind(this);
   }
 
-  componentDidMount(){
+  updateSearch(search) {
+    this.setState({ search: search })
+  }
+
+  componentDidMount() {
     const donneesBonbons = require('./data/liste_bonbons.json');
     const listeBonbons = donneesBonbons.products
     this.setState({
@@ -24,16 +32,22 @@ class App extends Component {
   }
 
   render() {
+    const filteredList = this.state.listeBonbons.filter(
+      candy =>
+        this.state.search === '' || candy.product_name.toLowerCase().includes(this.state.search.toLowerCase())
+    )
     return (
-        <BrowserRouter>
-          <Fragment>
-            <NavbarFeatures/>
-            <Switch>
-              <Route exact path="(/|/home)" render={() => <Home listeBonbons={this.state.listeBonbons}/>}/>
-              <Route exact path="/mes-bonbons" component={MesBonbons} />
-            </Switch>
-          </Fragment>
-        </BrowserRouter>
+      <BrowserRouter>
+        <Fragment>
+          <NavbarFeatures />
+          <Searchbar
+            updateSearch={this.updateSearch} />
+          <Switch>
+            <Route exact path="(/|/home)" render={() => <Home listeBonbons={filteredList} />} />
+            <Route exact path="/mes-bonbons" component={MesBonbons} />
+          </Switch>
+        </Fragment>
+      </BrowserRouter>
     );
   }
 }

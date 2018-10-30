@@ -5,7 +5,7 @@ import '../style/Home.scss';
 
 
 class Home extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             modal4601798030055: false
@@ -15,7 +15,7 @@ class Home extends Component {
     toggle(nr) {
         let modalNumber = 'modal' + nr
         this.setState({
-          [modalNumber]: !this.state[modalNumber]
+            [modalNumber]: !this.state[modalNumber]
         });
     }
 
