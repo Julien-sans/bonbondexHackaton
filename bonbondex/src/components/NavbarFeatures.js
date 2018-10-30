@@ -1,6 +1,7 @@
 import React, {Fragment} from 'react';
 import { Navbar, NavbarNav, NavbarToggler, Collapse } from 'mdbreact';
 import { NavLink } from 'react-router-dom';
+import '../style/NavbarFeatures.scss';
 
 class NavbarFeatures extends React.Component {
   constructor(props) {
@@ -21,13 +22,13 @@ class NavbarFeatures extends React.Component {
   render() {
     return (
       <Fragment>
-        <Navbar color="bg-dark fixed-top " dark expand="md" scrolling >
-          <NavLink exact to='/Home'>
+        <Navbar color="warning-color-dark fixed-top " dark expand="md" scrolling >
+          <NavLink exact to='/Home' className="mr-3">
             <strong>CandyDex</strong>
           </NavLink>
           {!this.state.isWideEnough && <NavbarToggler onClick={this.onClick} />}
           <Collapse isOpen={this.state.collapse} navbar>
-            <NavbarNav left>
+            <NavbarNav left >
               <NavLink className="nav-item" exact to="/mes-bonbons">Mes Bonbons</NavLink>
             </NavbarNav>
           </Collapse>

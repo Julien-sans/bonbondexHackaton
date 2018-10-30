@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Container, Row, Col, Button, Card, CardBody, CardImage, CardTitle, CardFooter, Modal, ModalBody, ModalHeader } from 'mdbreact';
+import { Col, Button, Card, CardBody, CardImage, CardTitle, CardFooter, Modal, ModalBody, ModalHeader } from 'mdbreact';
+import '../style/BonbonCard.scss';
 class BonbonCard extends Component {
 
   constructor(props){
@@ -18,7 +19,7 @@ class BonbonCard extends Component {
 
   render() {
     const { product_name, image_front_small_url, id, allergens } = this.props.bonbon;
-    const buttonClass = this.props.bonbonFound ? "danger":"success"
+    const buttonClass = this.props.bonbonFound ? "danger":"elegant"
     const buttonText = this.props.bonbonFound ? "Supprimer" : "Ajouter"
 
     const allergènes = allergens ? allergens : "Il n'y a pas d'allergènes pour ce produit"
@@ -27,8 +28,8 @@ class BonbonCard extends Component {
       <Col lg="4" md="6" xs="6">
         <Card className="mt-3" style={{height: "350px", fontSize: "1em"}}>
           <CardImage  className="img-fluid w-100" src={image_front_small_url}  />
-          <CardBody >
-            <CardTitle style={{fontSize: "1em"}}onClick={() => this.toggle(id)}>{product_name}</CardTitle>
+          <CardBody className="text-center">
+            <CardTitle onClick={() => this.toggle(id)}>{product_name}</CardTitle>
           </CardBody>
           <CardFooter>
               <div className="d-flex justify-content-center">
@@ -40,7 +41,7 @@ class BonbonCard extends Component {
           <ModalHeader toggle={this.toggle}>{product_name}</ModalHeader>
             <ModalBody className="text-center">
                 <img className="w-100" src={image_front_small_url} /> 
-                <div className="mt-3">Liste des alergènes: {allergènes} </div>
+                <p className="mt-3">Liste des alergènes: {allergènes} </p>
             </ModalBody>
         </Modal>
       </Col>
