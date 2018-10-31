@@ -28,11 +28,15 @@ class Home extends Component {
   }
 
   handleClick = bonbon => {
+    let newList
     const { list } = this.state;
-    if (list.includes(bonbon)) {
-      return
+    const bonbonInList = this.state.list.find((bonbonFound) => bonbon.id === bonbonFound.id)
+    if (bonbonInList) {
+      newList = this.state.list.filter((_bonbon) => _bonbon.id !== bonbon.id)
     }
-    const newList = [...list, bonbon]
+    else {
+      newList = [...list, bonbon]
+    }
     localStorage.setItem('list', JSON.stringify(newList));
     this.setState({
       list: newList
