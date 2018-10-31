@@ -1,12 +1,12 @@
 import React, { Component, Fragment } from 'react';
 import { Container, Row, Col, Button, Card, CardBody, CardImage, CardTitle, CardFooter, Modal, ModalBody, ModalHeader, Fa } from 'mdbreact';
-import  '../data/liste_bonbons';
+import '../data/liste_bonbons';
 import '../style/Home.scss';
 import BonbonCard from './BonbonCard';
-
+import Searchbar from '../components/Searchbar.js';
 
 class Home extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       modal4601798030055: false,
@@ -18,9 +18,9 @@ class Home extends Component {
 
   componentDidMount() {
     localStorage.getItem('list') &&
-    this.setState({
-      list: JSON.parse(localStorage.getItem('list')),
-    })
+      this.setState({
+        list: JSON.parse(localStorage.getItem('list')),
+      })
   }
 
   addItem = event => {
@@ -28,8 +28,15 @@ class Home extends Component {
   }
 
   handleClick = bonbon => {
+    let newList
     const { list } = this.state;
-    const newList = [...list, bonbon]
+    const bonbonInList = this.state.list.find((bonbonFound) => bonbon.id === bonbonFound.id)
+    if (bonbonInList) {
+      newList = this.state.list.filter((_bonbon) => _bonbon.id !== bonbon.id)
+    }
+    else {
+      newList = [...list, bonbon]
+    }
     localStorage.setItem('list', JSON.stringify(newList));
     this.setState({
       list: newList
@@ -40,14 +47,17 @@ class Home extends Component {
     return (
       <Fragment>
         <Container >
+          <Row>
+            <Searchbar
+              updateSearch={this.updateSearch} />
+          </Row>
           <Row >
             {
-              this.props.listeBonbons.map((bonbon, key) =>
-              {
+              this.props.listeBonbons.map((bonbon, key) => {
                 const bonbonInList = this.state.list.find((bonbonFound) => bonbon.id === bonbonFound.id)
                 const bonbonFound = bonbonInList !== undefined
-                return <BonbonCard bonbonFound={bonbonFound} key={key} handleClick={this.handleClick} bonbon={bonbon}/>
-              } )
+                return <BonbonCard bonbonFound={bonbonFound} key={key} handleClick={this.handleClick} bonbon={bonbon} />
+              })
             }
           </Row>
         </Container>
