@@ -4,6 +4,7 @@ import { Route, BrowserRouter, Switch, } from 'react-router-dom';
 import Home from './components/Home';
 import NavbarFeatures from './components/NavbarFeatures';
 import MesBonbons from './components/MesBonbons.js';
+import FooterFeatures from './components/FooterFeatures';
 
 import './searchbar.css';
 import './App.css';
@@ -43,6 +44,7 @@ class App extends Component {
             <Route exact path="(/|/home)" render={() => <Home listeBonbons={filteredList} updateSearch={this.updateSearch} />} />
             <Route exact path="/mes-bonbons" component={MesBonbons} />
           </Switch>
+          <FooterFeatures />
         </Fragment>
       </BrowserRouter>
     );

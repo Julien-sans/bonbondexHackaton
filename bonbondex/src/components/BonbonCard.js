@@ -26,6 +26,7 @@ class BonbonCard extends Component {
     const buttonClass = this.props.bonbonFound ? "deep-purple darken-4":"cyan accent-1"
     const buttonText = this.props.bonbonFound ? "-" : "+"
     const allergènes = allergens ? allergens : "Il n'y a pas d'allergènes pour ce produit"
+    const Cal = this.props.bonbon.nutriments.energy_value ? this.props.bonbon.nutriments.energy_value : 300
 
     return (
 
@@ -51,6 +52,7 @@ class BonbonCard extends Component {
           <ModalHeader toggle={this.toggle} >{product_name.normalize('NFD').replace(/[\u0300-\u036f]/g, "")}</ModalHeader>
           <ModalBody className="text-center">
                <img className="" src={image_front_small_url} />
+               <p className='pt-3' style={{fontSize: "1.5em"}}>{Cal} Kcal</p>
                <p className="mt-3">{"alergènes".normalize('NFD').replace(/[\u0300-\u036f]/g, "")}: {allergènes.normalize('NFD').replace(/[\u0300-\u036f]/g, "")} </p>
                <div className="button-wrapper">
                 {

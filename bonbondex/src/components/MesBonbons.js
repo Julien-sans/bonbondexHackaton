@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Row, Col, Button, Fa } from 'mdbreact';
+import { Container, Row } from 'mdbreact';
 import '../style/MesBonbons.scss';
 import BonbonCard from './BonbonCard';
 
