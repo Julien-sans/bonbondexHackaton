@@ -17,12 +17,13 @@ class BonbonCard extends Component {
        });
    }
 
+
   render() {
     const { product_name, image_front_small_url, id, allergens } = this.props.bonbon;
     const buttonClass = this.props.bonbonFound ? "deep-purple darken-4":"cyan accent-1"
     const buttonText = this.props.bonbonFound ? "-" : "+"
-
     const allergènes = allergens ? allergens : "Il n'y a pas d'allergènes pour ce produit"
+
 
     return (
       
@@ -34,8 +35,10 @@ class BonbonCard extends Component {
           <div className="title-wrapper px-3" onClick={() => this.toggle(id)}>
             <h5 className="texte-left my-auto">{product_name.normalize('NFD').replace(/[\u0300-\u036f]/g, "")}</h5>
           </div>
+          
           <div className="button-wrapper">
             <Button onClick = {() => this.props.handleClick(this.props.bonbon)} className=" p-0 m-0 border-0" color={buttonClass} rounded>{buttonText}</Button>
+            
           </div>
         </div>
         <Modal className="d-flex justify-content-center" isOpen={this.state.isOpen} size="lg" lg position="top" centered>
@@ -45,6 +48,7 @@ class BonbonCard extends Component {
                <p className="mt-3">{"alergènes".normalize('NFD').replace(/[\u0300-\u036f]/g, "")}: {allergènes.normalize('NFD').replace(/[\u0300-\u036f]/g, "")} </p>
                <div className="button-wrapper">
                 <Button onClick = {() => this.props.handleClick(this.props.bonbon)} className="p-2 px-4 m-0 border-0" color={buttonClass} rounded>{buttonText}</Button>
+                
               </div>
           </ModalBody>
        </Modal>      
