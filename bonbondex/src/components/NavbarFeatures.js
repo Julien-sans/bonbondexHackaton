@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react';
+import React, { Fragment } from 'react';
 import { Navbar, NavbarNav, NavbarToggler, Collapse } from 'mdbreact';
 import { NavLink } from 'react-router-dom';
 import '../style/NavbarFeatures.scss';
@@ -26,12 +26,7 @@ class NavbarFeatures extends React.Component {
           <NavLink exact to='/Home' className="mr-3">
             <strong>Dead Candy</strong>
           </NavLink>
-          {!this.state.isWideEnough && <NavbarToggler onClick={this.onClick} />}
-          <Collapse isOpen={this.state.collapse} navbar>
-            <NavbarNav left >
-              <NavLink className="nav-item" exact to="/mes-bonbons">Mes victimes</NavLink>
-            </NavbarNav>
-          </Collapse>
+          <NavLink className="nav-item" exact to="/mes-bonbons">Mes victimes</NavLink>
         </Navbar>
       </Fragment>
     );

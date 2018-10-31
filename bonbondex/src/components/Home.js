@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Container, Row, Col, Button, Card, CardBody, CardImage, CardTitle, CardFooter, Modal, ModalBody, ModalHeader, Fa } from 'mdbreact';
+import { Container, Row } from 'mdbreact';
 import '../data/liste_bonbons';
 import '../style/Home.scss';
 import BonbonCard from './BonbonCard';
@@ -49,8 +49,7 @@ class Home extends Component {
       <Fragment>
         <Container >
           <Row>
-            <Searchbar
-              updateSearch={this.updateSearch} />
+            <Searchbar updateSearch={this.props.updateSearch} />
           </Row>
           <Row >
             {

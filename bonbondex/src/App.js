@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Route, BrowserRouter, Switch } from 'react-router-dom';
+import { Route, BrowserRouter, Switch, } from 'react-router-dom';
 
 import Home from './components/Home';
 import NavbarFeatures from './components/NavbarFeatures';
@@ -40,7 +40,7 @@ class App extends Component {
         <Fragment>
           <NavbarFeatures />
           <Switch>
-            <Route exact path="(/|/home)" render={() => <Home listeBonbons={filteredList} />} />
+            <Route exact path="(/|/home)" render={() => <Home listeBonbons={filteredList} updateSearch={this.updateSearch} />} />
             <Route exact path="/mes-bonbons" component={MesBonbons} />
           </Switch>
         </Fragment>
