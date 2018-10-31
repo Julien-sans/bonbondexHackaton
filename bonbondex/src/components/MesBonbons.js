@@ -6,7 +6,7 @@ import BonbonCard from './BonbonCard';
 
 class MesBonbons extends Component {
 
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       list: [],
@@ -15,9 +15,9 @@ class MesBonbons extends Component {
 
   componentDidMount() {
     localStorage.getItem('list') &&
-    this.setState({
-      list: JSON.parse(localStorage.getItem('list')),
-    })
+      this.setState({
+        list: JSON.parse(localStorage.getItem('list')),
+      })
   }
 
   handleClick = bonbonRemoved => {
@@ -28,25 +28,21 @@ class MesBonbons extends Component {
     })
   }
 
-    render() {
-        return (
-            <div>
-                <Container fluid id="mes-bonbons">
-                    <Row className="d-flex justify-content-center">
-                        <Button size="md" color="warning" rounded>Tout <Fa icon="list" className="ml-1" /></Button>
-                    </Row>
-                    <Row>
-                      {
-                        this.state.list.map((bonbon, key) =>
-                        {
-                          return <BonbonCard bonbonFound={true} key={key} handleClick={this.handleClick} bonbon={bonbon}/>
-                        })
-                      }
-                    </Row>
-                </Container>
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div>
+        <Container fluid id="mes-bonbons">
+          <Row>
+            {
+              this.state.list.map((bonbon, key) => {
+                return <BonbonCard bonbonFound={true} key={key} handleClick={this.handleClick} bonbon={bonbon} />
+              })
+            }
+          </Row>
+        </Container>
+      </div>
+    );
+  }
 }
 
 export default MesBonbons;
