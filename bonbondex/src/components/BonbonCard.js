@@ -18,7 +18,7 @@ class BonbonCard extends Component {
    }
 
   render() {
-    const { product_name, image_front_small_url, id, allergens } = this.props.bonbon;
+    const { product_name, image_front_small_url, id, allergens, nutriments } = this.props.bonbon;
     const buttonClass = this.props.bonbonFound ? "danger":"elegant"
     const buttonText = this.props.bonbonFound ? "Supprimer" : "Ajouter"
 
@@ -40,8 +40,9 @@ class BonbonCard extends Component {
         <Modal isOpen={this.state.isOpen} size="lg" lg position="top">
           <ModalHeader toggle={this.toggle}>{product_name}</ModalHeader>
             <ModalBody className="text-center">
-                <img className="w-100" src={image_front_small_url} /> 
+                <img className="w-100" src={image_front_small_url} />
                 <p className="mt-3">Liste des alergènes: {allergènes} </p>
+                <p className="mt-3">Valeur énergétique: {nutriments.energy_value}Kcal</p>
             </ModalBody>
         </Modal>
       </Col>
