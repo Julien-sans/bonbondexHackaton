@@ -22,14 +22,14 @@ class NavbarFeatures extends React.Component {
   render() {
     return (
       <Fragment>
-        <Navbar color="warning-color-dark fixed-top " dark expand="md" scrolling >
+        <Navbar color=" fixed-top " dark expand="md" scrolling >
           <NavLink exact to='/Home' className="mr-3">
-            <strong>CandyDex</strong>
+            <strong>Dead Candy</strong>
           </NavLink>
           {!this.state.isWideEnough && <NavbarToggler onClick={this.onClick} />}
           <Collapse isOpen={this.state.collapse} navbar>
             <NavbarNav left >
-              <NavLink className="nav-item" exact to="/mes-bonbons">Mes Bonbons</NavLink>
+              <NavLink className="nav-item" exact to="/mes-bonbons">Mes victimes</NavLink>
             </NavbarNav>
           </Collapse>
         </Navbar>

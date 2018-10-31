@@ -1,19 +1,67 @@
-.card-body{
-    background-color: #ffbb33;
-    height: 150px;
 
-    .card-title{
-        font-family: "Creepster";
-        font-size: 2em;
-        height: 50px;
+
+.wrapper{
+    display: inline-flex;
+    width: 100%;
+    cursor: pointer;
+    
+    
+
+    .img-wrapper{
+        
+        img{
+            height: 100px;
+            width: 80px;
+            border-radius: 10px 0 0 10px;
+        }
+    }
+
+    .title-wrapper {
+        width: 100%;;
+        font-family: "Zombie";
+        background-color: #b77eff;
+        display: flex;
+        color: #440078;
+    }
+
+    .button-wrapper{
+        button{
+            height: 100%;
+            width: 65px;
+            border-radius: 0 10px 10px 0;
+            font-size: 2em;
+            font-family: "Creepster";
+        }
+        
+    }
+}
+
+
+.modal-content{
+    font-family: "Zombie";
+    border-radius: 30px!important;
+
+    .modal-header{
+        border: 0!important;
+        background-color: #440078;
+        color: #00dbff;
+        border-radius: 10px 10px 0 0 !important;
+
+        .close{
+            color: #00dbff;
+            text-shadow: none;
+
+            &:hover{
+                color: none;
+            }
+        }
 
     }
 
-    
-}
-
-.card-footer{
-    background-color: #ffbb33!important;
-    border-top: 0!important;
-
+    .modal-body{
+        background-color: #b77eff;
+        color: white;
+        border-radius:  0 0 10px 10px !important;
+        font-size: 1.2em;
+    }
 }

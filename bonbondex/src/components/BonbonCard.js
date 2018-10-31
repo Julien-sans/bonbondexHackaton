@@ -19,31 +19,35 @@ class BonbonCard extends Component {
 
   render() {
     const { product_name, image_front_small_url, id, allergens } = this.props.bonbon;
-    const buttonClass = this.props.bonbonFound ? "danger":"elegant"
-    const buttonText = this.props.bonbonFound ? "Supprimer" : "Ajouter"
+    const buttonClass = this.props.bonbonFound ? "deep-purple darken-4":"cyan accent-1"
+    const buttonText = this.props.bonbonFound ? "-" : "+"
 
     const allergènes = allergens ? allergens : "Il n'y a pas d'allergènes pour ce produit"
 
     return (
-      <Col lg="4" md="6" xs="6">
-        <Card className="mt-3" style={{height: "350px", fontSize: "1em"}}>
-          <CardImage  className="img-fluid w-100" src={image_front_small_url}  />
-          <CardBody className="text-center">
-            <CardTitle onClick={() => this.toggle(id)}>{product_name}</CardTitle>
-          </CardBody>
-          <CardFooter>
-              <div className="d-flex justify-content-center">
-              <Button onClick = {() => this.props.handleClick(this.props.bonbon)} className="p-2" color={buttonClass} rounded>{buttonText}</Button>
+      
+      <Col lg="4" md="6" xs="12" className="mb-3">
+        <div className="wrapper">
+          <div className="img-wrapper" onClick={() => this.toggle(id)}>
+            <img src={image_front_small_url} />
+          </div>
+          <div className="title-wrapper px-3" onClick={() => this.toggle(id)}>
+            <h5 className="texte-left my-auto">{product_name.normalize('NFD').replace(/[\u0300-\u036f]/g, "")}</h5>
+          </div>
+          <div className="button-wrapper">
+            <Button onClick = {() => this.props.handleClick(this.props.bonbon)} className=" p-0 m-0 border-0" color={buttonClass} rounded>{buttonText}</Button>
+          </div>
+        </div>
+        <Modal className="d-flex justify-content-center" isOpen={this.state.isOpen} size="lg" lg position="top" centered>
+          <ModalHeader toggle={this.toggle} >{product_name.normalize('NFD').replace(/[\u0300-\u036f]/g, "")}</ModalHeader>
+          <ModalBody className="text-center">
+               <img className="" src={image_front_small_url} /> 
+               <p className="mt-3">{"alergènes".normalize('NFD').replace(/[\u0300-\u036f]/g, "")}: {allergènes.normalize('NFD').replace(/[\u0300-\u036f]/g, "")} </p>
+               <div className="button-wrapper">
+                <Button onClick = {() => this.props.handleClick(this.props.bonbon)} className="p-2 px-4 m-0 border-0" color={buttonClass} rounded>{buttonText}</Button>
               </div>
-          </CardFooter>
-        </Card>
-        <Modal isOpen={this.state.isOpen} size="lg" lg position="top">
-          <ModalHeader toggle={this.toggle}>{product_name}</ModalHeader>
-            <ModalBody className="text-center">
-                <img className="w-100" src={image_front_small_url} /> 
-                <p className="mt-3">Liste des alergènes: {allergènes} </p>
-            </ModalBody>
-        </Modal>
+          </ModalBody>
+       </Modal>      
       </Col>
     )
   }
