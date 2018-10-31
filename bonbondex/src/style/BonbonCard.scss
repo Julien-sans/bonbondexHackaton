@@ -27,8 +27,10 @@
     .button-wrapper{
         button{
             height: 100%;
-            width: 100%;
+            width: 65px;
             border-radius: 0 10px 10px 0;
+            font-size: 2em;
+            font-family: "Creepster";
         }
         
     }
@@ -36,7 +38,7 @@
 
 
 .modal-content{
-    font-family: "Creepster";
+    font-family: "Zombie";
     border-radius: 30px!important;
 
     .modal-header{
@@ -60,5 +62,6 @@
         background-color: #b77eff;
         color: white;
         border-radius:  0 0 10px 10px !important;
+        font-size: 1.2em;
     }
 }
