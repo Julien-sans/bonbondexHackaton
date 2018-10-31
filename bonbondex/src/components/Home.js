@@ -4,6 +4,7 @@ import '../data/liste_bonbons';
 import '../style/Home.scss';
 import BonbonCard from './BonbonCard';
 import Searchbar from '../components/Searchbar.js';
+import {ToastCOntainer, ToastStore} from 'react-toasts';
 
 class Home extends Component {
   constructor(props) {
