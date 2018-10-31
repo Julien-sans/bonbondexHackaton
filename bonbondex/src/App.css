@@ -2,3 +2,8 @@
   text-align: center;
   background: #440078;
 }
+
+@font-face {
+  font-family: "Zombie";
+  src: url("./typos/zombie/ZOMBIE.TTF");
+ }

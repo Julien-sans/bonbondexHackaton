@@ -5,18 +5,20 @@
     width: 100%;
     cursor: pointer;
     
+    
 
     .img-wrapper{
         
         img{
             height: 100px;
             width: 80px;
+            border-radius: 10px 0 0 10px;
         }
     }
 
     .title-wrapper {
         width: 100%;;
-        font-family: "Creepster";
+        font-family: "Zombie";
         background-color: #b77eff;
         display: flex;
         color: #440078;
@@ -26,24 +28,37 @@
         button{
             height: 100%;
             width: 100%;
-            border-radius: 0;
+            border-radius: 0 10px 10px 0;
         }
         
     }
 }
 
+
 .modal-content{
-    // background-color: #ffbb33!important;
     font-family: "Creepster";
+    border-radius: 30px!important;
 
     .modal-header{
         border: 0!important;
-        background-color: #ffbb33;
+        background-color: #440078;
+        color: #00dbff;
+        border-radius: 10px 10px 0 0 !important;
+
+        .close{
+            color: #00dbff;
+            text-shadow: none;
+
+            &:hover{
+                color: none;
+            }
+        }
 
     }
 
     .modal-body{
-        background-color: black;
+        background-color: #b77eff;
         color: white;
+        border-radius:  0 0 10px 10px !important;
     }
 }

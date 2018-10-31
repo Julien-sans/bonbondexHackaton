@@ -32,7 +32,7 @@ class BonbonCard extends Component {
             <img src={image_front_small_url} />
           </div>
           <div className="title-wrapper px-3" onClick={() => this.toggle(id)}>
-            <h5 className="texte-left my-auto">{product_name}</h5>
+            <h5 className="texte-left my-auto">{product_name.normalize('NFD').replace(/[\u0300-\u036f]/g, "")}</h5>
           </div>
           <div className="button-wrapper">
             <Button onClick = {() => this.props.handleClick(this.props.bonbon)} className="p-1 px-4 m-0 border-0" color={buttonClass} rounded>{buttonText}</Button>
