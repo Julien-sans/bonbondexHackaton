@@ -51,7 +51,7 @@ class Home extends Component {
           <Row>
             <Searchbar updateSearch={this.props.updateSearch} />
           </Row>
-          <Row >
+          <Row className="mb-5">
             {
               this.props.listeBonbons.map((bonbon, key) => {
                 const bonbonInList = this.state.list.find((bonbonFound) => bonbon.id === bonbonFound.id)

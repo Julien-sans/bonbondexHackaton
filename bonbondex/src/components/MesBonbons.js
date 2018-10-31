@@ -55,7 +55,7 @@ class MesBonbons extends Component {
                 return <BonbonCard bonbonFound={true} key={key} handleClick={this.handleClick} bonbon={bonbon} onChange={this.incrementCounter.bind(this)} />
               })
             }
-            
+
           </Row>
         </Container>
       </div>
