@@ -1,28 +1,49 @@
-.card-body{
-    background-color: #ffbb33;
-    //  height: 80px;
 
-    .card-title{
+
+.wrapper{
+    display: inline-flex;
+    width: 100%;
+    cursor: pointer;
+    
+
+    .img-wrapper{
+        
+        img{
+            height: 100px;
+            width: 80px;
+        }
+    }
+
+    .title-wrapper {
+        width: 100%;;
         font-family: "Creepster";
-        font-size: 1.5em;
+        background-color: #b77eff;
+        display: flex;
+        color: #440078;
+    }
+
+    .button-wrapper{
+        button{
+            height: 100%;
+            width: 100%;
+            border-radius: 0;
+        }
+        
     }
 }
 
-.card-footer{
-    background-color: #ffbb33!important;
-    border-top: 0!important;
-
-}
-
 .modal-content{
-    background-color: #2E2E2E!important;
-    color: white;
+    // background-color: #ffbb33!important;
+    font-family: "Creepster";
 
     .modal-header{
         border: 0!important;
+        background-color: #ffbb33;
 
-        .close{
-            color: white;
-        }
+    }
+
+    .modal-body{
+        background-color: black;
+        color: white;
     }
 }
