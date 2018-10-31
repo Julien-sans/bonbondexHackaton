@@ -53,8 +53,12 @@ class BonbonCard extends Component {
                <img className="" src={image_front_small_url} />
                <p className="mt-3">{"alergènes".normalize('NFD').replace(/[\u0300-\u036f]/g, "")}: {allergènes.normalize('NFD').replace(/[\u0300-\u036f]/g, "")} </p>
                <div className="button-wrapper">
-                <Button onClick = {() => this.props.handleClick(this.props.bonbon)} className="p-2 px-4 m-0 border-0" color={buttonClass} rounded>{buttonText}</Button>
-                
+                {
+                  buttonText === "+"
+                  ? <Button onClick = {() => {this.props.handleClick(this.props.bonbon); ToastStore.info("+1 victime")}} className="p-2 px-4 m-0 border-0" color={buttonClass} rounded>{buttonText}</Button>
+                  : <Button onClick = {() => {this.props.handleClick(this.props.bonbon); ToastStore.info("-1 victime")}} className="p-2 px-4 m-0 border-0" color={buttonClass} rounded>{buttonText}</Button>
+                }
+                <ToastContainer store={ToastStore} position={ToastContainer.POSITION.BOTTOM_LEFT}/>
               </div>
           </ModalBody>
        </Modal>

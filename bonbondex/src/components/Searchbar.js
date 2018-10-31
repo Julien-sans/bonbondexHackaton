@@ -19,16 +19,15 @@ class Searchbar extends React.Component {
   render() {
     return (
       <div className="container" id="searchbar">
-        <div className="mt-5"></div>
+        <h2 className="text-center mt-5 mb-5">Ajoute ta dernière victime !</h2>
         <div
-          id="searchbar"
           className="form-inline active-cyan-3 active-cyan-4 mb-4 col-8 mx-auto"
         >
           <i
             className="fa fa-search"
             aria-hidden="true"
-          >
-          </i>
+          />
+
           <input
             className="form-control form-control-sm ml-3 w-75 mx-auto"
             type="text"
@@ -36,7 +35,7 @@ class Searchbar extends React.Component {
             onChange={this.updateSearch}
             aria-label="Search"
           />
-        </div>
+          </div>
       </div>
     );
   }
