@@ -41,7 +41,9 @@ class MesBonbons extends Component {
       <div>
         <Container fluid id="mes-bonbons">
           <Row>
-            <div className="compteurVictimes text-danger mx-auto d-flex flex-column pb-5 pt-5">
+            <div
+              className="compteurVictimes mx-auto d-flex flex-column pb-5 pt-5"
+            >
               <div className="mx-auto">{counter}</div>
               <div>VICTIMES</div>
             </div>
