@@ -1,9 +1,11 @@
 import React, { Component, Fragment } from 'react';
-import { Route, BrowserRouter, Switch } from 'react-router-dom';
+import { Route, BrowserRouter, Switch, } from 'react-router-dom';
+import { Row } from 'mdbreact';
 
 import Home from './components/Home';
 import NavbarFeatures from './components/NavbarFeatures';
 import MesBonbons from './components/MesBonbons.js';
+import Searchbar from './components/Searchbar.js';
 
 import './searchbar.css';
 import './App.css';
@@ -40,7 +42,7 @@ class App extends Component {
         <Fragment>
           <NavbarFeatures />
           <Switch>
-            <Route exact path="(/|/home)" render={() => <Home listeBonbons={filteredList} />} />
+            <Route exact path="(/|/home)" render={() => <Home listeBonbons={filteredList} updateSearch={this.updateSearch} />} />
             <Route exact path="/mes-bonbons" component={MesBonbons} />
           </Switch>
         </Fragment>

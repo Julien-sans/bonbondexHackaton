@@ -3,7 +3,7 @@ import { Container, Row, Col, Button, Card, CardBody, CardImage, CardTitle, Card
 import '../data/liste_bonbons';
 import '../style/Home.scss';
 import BonbonCard from './BonbonCard';
-import Searchbar from '../components/Searchbar.js';
+import Searchbar from './Searchbar';
 
 class Home extends Component {
   constructor(props) {
@@ -48,8 +48,7 @@ class Home extends Component {
       <Fragment>
         <Container >
           <Row>
-            <Searchbar
-              updateSearch={this.updateSearch} />
+            <Searchbar updateSearch={this.props.updateSearch} />
           </Row>
           <Row >
             {
