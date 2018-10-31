@@ -3,7 +3,7 @@ import { Container, Row, Col, Button, Card, CardBody, CardImage, CardTitle, Card
 import '../data/liste_bonbons';
 import '../style/Home.scss';
 import BonbonCard from './BonbonCard';
-
+import Searchbar from '../components/Searchbar.js';
 
 class Home extends Component {
   constructor(props) {
@@ -47,6 +47,10 @@ class Home extends Component {
     return (
       <Fragment>
         <Container >
+          <Row>
+            <Searchbar
+              updateSearch={this.updateSearch} />
+          </Row>
           <Row >
             {
               this.props.listeBonbons.map((bonbon, key) => {
