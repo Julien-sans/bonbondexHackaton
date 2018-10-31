@@ -47,15 +47,10 @@ class MesBonbons extends Component {
             </div>
 
           </Row>
-          <Row className="d-flex justify-content-center">
-            <Button size="md" color="warning" rounded>Tout <Fa icon="list" className="ml-1" /></Button>
-          </Row>
-
           <Row>
             {
-              this.state.list.map((bonbon, key) =>
-              {
-                return <BonbonCard bonbonFound={true} key={key} handleClick={this.handleClick} bonbon={bonbon} onChange={this.incrementCounter.bind(this)}/>
+              this.state.list.map((bonbon, key) => {
+                return <BonbonCard bonbonFound={true} key={key} handleClick={this.handleClick} bonbon={bonbon} onChange={this.incrementCounter.bind(this)} />
               })
             }
           </Row>
