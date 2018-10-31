@@ -1,11 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import { Route, BrowserRouter, Switch, } from 'react-router-dom';
-import { Row } from 'mdbreact';
 
 import Home from './components/Home';
 import NavbarFeatures from './components/NavbarFeatures';
 import MesBonbons from './components/MesBonbons.js';
-import Searchbar from './components/Searchbar.js';
 
 import './searchbar.css';
 import './App.css';

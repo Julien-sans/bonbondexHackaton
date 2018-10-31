@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Container, Row, Col, Button, Card, CardBody, CardImage, CardTitle, CardFooter, Modal, ModalBody, ModalHeader, Fa } from 'mdbreact';
+import { Container, Row } from 'mdbreact';
 import '../data/liste_bonbons';
 import '../style/Home.scss';
 import BonbonCard from './BonbonCard';
