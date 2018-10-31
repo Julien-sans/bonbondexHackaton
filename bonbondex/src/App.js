@@ -24,7 +24,7 @@ class App extends Component {
 
   componentDidMount() {
     const donneesBonbons = require('./data/liste_bonbons.json');
-    const listeBonbons = donneesBonbons.products
+    const listeBonbons = donneesBonbons.products.map(({ product_name, image_front_small_url, id, allergens }) => ({ product_name, image_front_small_url, id, allergens }));
     this.setState({
       listeBonbons: listeBonbons
     })

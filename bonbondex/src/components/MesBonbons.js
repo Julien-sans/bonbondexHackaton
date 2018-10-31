@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Row, Col, Button, Fa } from 'mdbreact';
+import { Container, Row } from 'mdbreact';
 import '../style/MesBonbons.scss';
 import BonbonCard from './BonbonCard';
 
@@ -55,7 +55,7 @@ class MesBonbons extends Component {
                 return <BonbonCard bonbonFound={true} key={key} handleClick={this.handleClick} bonbon={bonbon} onChange={this.incrementCounter.bind(this)} />
               })
             }
-            
+
           </Row>
         </Container>
       </div>

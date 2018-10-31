@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Navbar, NavbarNav, NavbarToggler, Collapse } from 'mdbreact';
+import { Navbar } from 'mdbreact';
 import { NavLink } from 'react-router-dom';
 import '../style/NavbarFeatures.scss';
 
