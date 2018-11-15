@@ -1,44 +1,10 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Dead Candy
 
-## Available Scripts
+C’est le soir d’Halloween, vous êtes des zombies affamés non pas de cerveaux mais de bonbons. Ni une, ni deux, vous sortez dans la rue, attaquez la première maison que vous trouvez et repartez avec un beau butin !
 
-In the project directory, you can run:
+Grand collectionneur que vous êtes, vous dégainez votre smartphone, ouvrez le site DEAD CANDY, et recherchez vos dernières victimes sucrées afin de les ajouter à votre liste.
+Vous avez kidnappé des Pâtes de Fruits, des Langues Acides, des Tagada Fraises et un autre bonbon dont vous ne connaissez pas le nom ; alors vous le cherchez !
 
-### `npm start`
+Heureux de votre chasse, vous voulez savoir combien de victimes vous allez pouvoir dévorer, vous vous rendez donc sur votre page de Victimes. Vous en avez 4 ! C’est parfait — vous avez justement un petit creux et en profitez pour en dévorer quelques uns.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+À nouveau plein d’énergie, vous continuez votre chasse, déambulant et titubant dans Toulouse…
